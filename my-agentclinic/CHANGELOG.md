@@ -1,6 +1,8 @@
 # Changelog
+<!-- last-sync: 2600d165ec5644a69df795c4e815a9023cd4b822 -->
 
 ## 2026-06-07
+- Add changelog skill and bootstrap CHANGELOG.md from git history
 - Add responsive design as a cross-cutting requirement
 - Add Vitest validation suite for Phase 1 scaffold
 - Add main layout shell (Header/Main/Footer) and mark Phase 1 complete

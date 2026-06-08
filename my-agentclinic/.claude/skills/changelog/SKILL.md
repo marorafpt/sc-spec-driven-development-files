@@ -1,25 +1,29 @@
 ---
-description: Maintain CHANGELOG.md — create it from git history on first run, prepend new entries on subsequent runs. Invoke manually before merging a branch.
+description: Maintain CHANGELOG.md — create from git history on first run, prepend new commits on subsequent runs. Invoke manually before merging a branch.
 ---
 
 When this skill is invoked, update `CHANGELOG.md` in the project root by following these steps exactly.
 
 ## Step 1 — collect commits
 
-Run this command from the project root:
+Run from the project root:
 
 ```bash
-git log --format="%ad|%s" --date=short --no-merges -- .
+git log --format="%H|%ad|%s" --date=short --no-merges -- .
 ```
 
-The `-- .` flag scopes the log to commits that touched files in this directory, excluding unrelated commits from the wider repository. Each output line is `YYYY-MM-DD|subject`.
+The `-- .` scopes the log to commits touching files in this directory. Each line is `hash|YYYY-MM-DD|subject`.
 
-## Step 2 — check for an existing changelog
+## Step 2 — determine the starting point
 
-Read `CHANGELOG.md` if it exists.
+Read `CHANGELOG.md` if it exists and look for a sync marker on the **second line**:
 
-- **File does not exist** → use all commits from Step 1.
-- **File exists** → find the first `## YYYY-MM-DD` heading. Only use commits whose date is **strictly newer** than that date. If there are none, report "Changelog is already up to date." and stop.
+```
+<!-- last-sync: <hash> -->
+```
+
+- **Marker found** → run `git log <hash>..HEAD --format="%H|%ad|%s" --date=short --no-merges -- .` to get only commits after the marker. If empty, report "Changelog is already up to date." and stop.
+- **No marker / file does not exist** → use all commits from Step 1.
 
 ## Step 3 — write or update the file
 
@@ -27,6 +31,7 @@ Read `CHANGELOG.md` if it exists.
 
 ```
 # Changelog
+<!-- last-sync: <most-recent-commit-hash> -->
 
 ## YYYY-MM-DD
 - Commit subject line
@@ -37,14 +42,16 @@ Read `CHANGELOG.md` if it exists.
 ```
 
 Rules:
-- Date sections are ordered **newest first**.
+- The sync marker is always the second line, immediately after `# Changelog`.
+- Date sections are ordered **newest first**; within a date, commits are newest first.
 - Each commit is a `- ` bullet using the subject line verbatim (strip trailing `.` for consistency).
-- One blank line between each `##` section; no blank line between the `#` heading and the first `##`.
-- Merge commits are already excluded by `--no-merges`.
+- One blank line between each `##` section; one blank line between the sync marker and the first `##`.
+- Merge commits are excluded by `--no-merges`.
+- The `<most-recent-commit-hash>` in the marker is always the hash of the newest commit included in this run.
 
-**If creating:** write the full file.  
-**If updating:** insert the new `##` sections immediately after the `# Changelog` line, before the first existing `##` section. Do not modify any existing content.
+**If creating:** write the full file with marker.  
+**If updating:** replace the existing sync marker with the new hash, then insert new `##` sections immediately after the blank line that follows the marker, before the first existing `##`. Do not modify any existing content below the insertion point.
 
 ## Step 4 — confirm
 
-Tell the user which dates were added and how many bullets are under each.
+Tell the user which dates were added, how many bullets are under each, and the new sync hash.
