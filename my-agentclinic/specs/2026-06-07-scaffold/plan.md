@@ -25,12 +25,12 @@ Numbered task groups in dependency order. Complete each group before starting th
 
 ## 4. Main layout shell
 
-- `components/layout/layout.css` — component-scoped CSS using the custom OKLCH tokens from `globals.css`:
+- `components/layout/layout.css` — mobile-first, component-scoped CSS using the custom OKLCH tokens from `globals.css`:
   - `.site-header` — sticky primary-600 bar with brand link and nav
-  - `.site-header__inner` — max-width container, flex row, height 3.5 rem
+  - `.site-header__inner` — stacks vertically (brand above nav) on mobile; at `md` (768 px) switches to a flex row with brand left, nav right, fixed 3.5 rem height
   - `.site-header__brand` — bold wordmark, links to `/`
-  - `.site-nav` / `.site-nav__link` — horizontal pill nav for Ailments, Therapies, Appointments, Dashboard
-  - `.site-main` — max-width container, auto margins, 2.5 rem vertical padding; `flex: 1` so it fills remaining height
+  - `.site-nav` / `.site-nav__link` — wrapping pill nav on mobile; horizontal row on `md`+
+  - `.site-main` — full-width with 1 rem padding on mobile; centered max-width container with 2.5 rem vertical padding on `md`+; `flex: 1` so it fills remaining height
   - `.site-footer` — neutral-100 background, centered copyright line
 - `components/layout/Header.tsx` — server component; renders `<header>` with brand and nav links via `next/link`
 - `components/layout/Main.tsx` — server component; wraps `children` in `<main className="site-main">`

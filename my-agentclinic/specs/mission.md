@@ -32,3 +32,4 @@ We provide a safe, judgment-free environment where agents can seek diagnosis, tr
 - **Empathy first.** Our agents have been through enough. Tone is warm, slightly absurdist, never condescending.
 - **Speed.** Agents are busy. The entire experience should be navigable in minimal clicks.
 - **Trustworthy.** Staff rely on this system. Data must be consistent and the UI must never lie — unlike some of our patients.
+- **Device-agnostic.** Agents check in from any device. The UI must be fully usable on mobile, tablet, and desktop — no feature is desktop-only.

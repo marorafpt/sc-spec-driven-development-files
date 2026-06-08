@@ -34,6 +34,20 @@ The App Router runs page and layout components **on the server by default**. Thi
 | Testing | **Vitest** — spec validation tests live in `specs/` next to their requirements |
 | Package manager | npm |
 
+## Responsive design
+
+The UI is **mobile-first**: base styles target small screens and `@media (min-width: N)` overrides scale up. Breakpoints mirror Tailwind's defaults so utility classes and component CSS stay in sync:
+
+| Breakpoint | Min-width | Typical use |
+|---|---|---|
+| (base) | 0 | Mobile — single column, stacked navigation |
+| `sm` | 640 px | Wide mobile / small tablet |
+| `md` | 768 px | Tablet — horizontal nav, multi-column content begins |
+| `lg` | 1024 px | Desktop |
+| `xl` | 1280 px | Wide desktop — max-width containers cap out |
+
+All component CSS in `components/**/*.css` follows the same mobile-first convention. No layout or feature is desktop-only.
+
 ## Testing and validation
 
 Validation tests use **Vitest** and live alongside each spec milestone:

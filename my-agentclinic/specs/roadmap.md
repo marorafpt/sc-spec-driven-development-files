@@ -66,5 +66,5 @@ Phases are medium-grained — one feature area each, independently shippable.
 
 - [ ] Replace seed data with file-based JSON store or SQLite
 - [ ] Loading states and error boundaries
-- [ ] Responsive layout audit
+- [ ] Responsive layout audit (cross-device QA pass — responsive design is built in from Phase 1, this is the formal sign-off)
 - [ ] Accessibility pass (keyboard navigation, ARIA labels)

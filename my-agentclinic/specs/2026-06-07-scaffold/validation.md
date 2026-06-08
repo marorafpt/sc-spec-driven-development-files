@@ -63,6 +63,16 @@ Manual checks:
 - Tailwind theme extends `colors` with at least: `primary`, `accent`, `neutral` tokens
 - `app/globals.css` uses Tailwind directives (not raw CSS resets)
 
+## 6. Responsive layout
+
+Resize the browser or use DevTools device emulation to confirm:
+
+| Viewport | Expected behaviour |
+|---|---|
+| Mobile (≤ 767 px) | Header brand and nav stack vertically; nav links wrap to a second line |
+| Tablet / Desktop (≥ 768 px) | Header is a single horizontal bar: brand left, nav right |
+| All widths | Main content area has visible padding; footer stays at the bottom |
+
 ## Merge checklist
 
 - [ ] `npm test` passes (all automated assertions green)
@@ -71,6 +81,7 @@ Manual checks:
 - [ ] Tailwind color tokens defined in theme
 - [ ] Google Font applied in root layout
 - [ ] No placeholder `any` types left in the codebase
+- [ ] Header stacks on mobile (≤ 767 px) and goes horizontal on tablet/desktop (≥ 768 px)
 
 ## What is NOT a blocker
 

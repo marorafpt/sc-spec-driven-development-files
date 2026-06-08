@@ -8,7 +8,8 @@ Transform the bare `npm init` project into a runnable Next.js 15 app with correc
 
 - Install and configure Next.js 15, React 19, Tailwind CSS, TypeScript (strict mode)
 - All required config files: `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`
-- Root layout (`app/layout.tsx`) with minimal brand: one Google Font wired through Tailwind, Tailwind color tokens for the clinic palette — no nav, no footer
+- Root layout (`app/layout.tsx`) with minimal brand: one Google Font wired through Tailwind, Tailwind color tokens for the clinic palette
+- Main layout shell (`components/layout/`) with responsive Header, Main, and Footer — the header stacks vertically on mobile and switches to a horizontal row at the `md` breakpoint (768 px)
 - Global styles (`app/globals.css`) with Tailwind base/components/utilities
 - Domain types in `lib/types.ts`: `Ailment`, `Therapy`, `Agent`, `Appointment`
 - Minimal seed data in `lib/data.ts`: 3–5 items per type, enough to populate every page stub without gaps
@@ -37,6 +38,7 @@ Transform the bare `npm init` project into a runnable Next.js 15 app with correc
 | Data layer | `lib/data.ts` TypeScript arrays | SQLite adds infra complexity Phase 1 doesn't need; Phase 7 replaces this |
 | Route grouping | `(portal)` group for agent-facing routes | Matches the folder structure in `specs/tech-stack.md` |
 | Component library | None — hand-rolled Tailwind | Per `specs/tech-stack.md` |
+| Responsive approach | Mobile-first CSS in `layout.css`; `md` breakpoint (768 px) for horizontal nav | Matches Tailwind breakpoint system; no JS required for layout adaptation |
 
 ## Context
 
