@@ -1,5 +1,9 @@
 # Changelog
-<!-- last-sync: 5632dd9525dffc2096c26271d57190bb426e81bf -->
+<!-- last-sync: aed7024876439c53addb6c5a753c2e061a22ad91 -->
+
+## 2026-06-08
+- Implement Phase 2: full application — landing page, all portal features, dashboard
+- Apply review fixes and post-Phase-1 updates
 
 ## 2026-06-07
 - Fix changelog skill to track sync by commit hash, not date
