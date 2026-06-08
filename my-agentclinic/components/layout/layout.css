@@ -77,6 +77,11 @@
   background-color: var(--color-nav-link-hover);
 }
 
+.site-nav__link--active {
+  background-color: var(--color-nav-link-hover);
+  font-weight: 600;
+}
+
 /* ------------------------------------------------------------------ */
 /* Main                                                                 */
 /* ------------------------------------------------------------------ */
