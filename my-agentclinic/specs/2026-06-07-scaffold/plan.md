@@ -62,6 +62,7 @@ Create each file with: a single server component, an `<h1>` stub heading, and a 
 
 ## 7. Verify
 
+- Run `npm test` — all assertions in `specs/2026-06-07-scaffold/validation.test.ts` must pass
 - Run `npm run build` — must exit 0 with no TypeScript errors
 - Confirm zero type errors reported in the build output
 - Open `npm run dev` briefly to confirm no 404s on any stub route

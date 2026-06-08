@@ -31,7 +31,31 @@ The App Router runs page and layout components **on the server by default**. Thi
 | UI components | Hand-rolled with Tailwind (no component library) |
 | Database | **SQLite** — file-based, zero infra, full SQL; accessed via `better-sqlite3` |
 | Data (Phase 1) | Seed data in `lib/data.ts` loaded into SQLite on startup |
+| Testing | **Vitest** — spec validation tests live in `specs/` next to their requirements |
 | Package manager | npm |
+
+## Testing and validation
+
+Validation tests use **Vitest** and live alongside each spec milestone:
+
+```
+specs/
+└── 2026-06-07-scaffold/
+    ├── requirements.md
+    ├── plan.md
+    ├── validation.md       # human-readable checklist
+    └── validation.test.ts  # Vitest: machine-verifiable assertions
+```
+
+Run all validation tests with:
+
+```bash
+npm test
+```
+
+### What goes in a validation test
+
+Each `validation.test.ts` covers assertions that can be checked programmatically — file existence, TypeScript types, seed data shape, HTTP route responses. Anything that requires visual or manual review stays in `validation.md`.
 
 ## Folder structure
 

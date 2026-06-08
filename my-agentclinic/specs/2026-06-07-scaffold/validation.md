@@ -2,6 +2,12 @@
 
 Phase 1 is complete and mergeable when every check below passes.
 
+Automated checks (sections 3–5 below) are covered by `validation.test.ts`. Run them with:
+
+```bash
+npm test
+```
+
 ---
 
 ## 1. Production build is clean
@@ -30,15 +36,24 @@ Start `npm run dev` and confirm each URL returns a page (not a 404 or crash):
 | `/appointments/new` | Booking form stub |
 | `/dashboard` | Staff dashboard stub |
 
-## 3. Domain types are complete
+## 3. Domain types and seed data — automated (`npm test`)
 
-- `lib/types.ts` exports all four interfaces: `Ailment`, `Therapy`, `Agent`, `Appointment`
-- `lib/data.ts` exports `ailments`, `therapies`, `agents`, `appointments` — each with 3–5 items
+`validation.test.ts` asserts:
+
+- `lib/types.ts` and `lib/data.ts` exist
+- All four arrays (`ailments`, `therapies`, `agents`, `appointments`) have 3–5 items
+- Every item has all required fields with correct types and valid union values
+- Referential integrity: `ailment.therapyIds`, `therapy.ailmentIds`, `appointment.agentId`, `appointment.therapyId` all resolve to known records
 - No `any`, no `// @ts-ignore`, no missing required fields in seed data
 
-## 4. Config files are present and correct
+## 4. Config files — automated (`npm test`)
 
+`validation.test.ts` asserts:
+
+- `tsconfig.json`, `next.config.ts`, `postcss.config.js` exist
 - `tsconfig.json` has `"strict": true`
+
+Manual checks:
 - `tailwind.config.ts` content paths cover `app/**` and `components/**`
 - `postcss.config.js` includes `tailwindcss` and `autoprefixer`
 
@@ -50,10 +65,9 @@ Start `npm run dev` and confirm each URL returns a page (not a 404 or crash):
 
 ## Merge checklist
 
+- [ ] `npm test` passes (all automated assertions green)
 - [ ] `npm run build` exits 0 with no type errors
 - [ ] All 8 stub routes resolve in `npm run dev`
-- [ ] `lib/types.ts` has all four domain types, strict and complete
-- [ ] `lib/data.ts` has 3–5 seeded items per type
 - [ ] Tailwind color tokens defined in theme
 - [ ] Google Font applied in root layout
 - [ ] No placeholder `any` types left in the codebase
@@ -62,4 +76,3 @@ Start `npm run dev` and confirm each URL returns a page (not a 404 or crash):
 
 - Stub pages look unstyled — Phase 2 owns the landing page, Phase 3 owns ailments UI
 - Seed data copy is rough/placeholder — content is not validated at this phase
-- No nav bar — deferred to Phase 2
