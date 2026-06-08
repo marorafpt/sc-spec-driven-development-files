@@ -8,6 +8,10 @@ const CLASS_MAP: Record<Ailment["severity"], string> = {
   severe: "inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-100 text-primary-700",
 };
 
+function capitalize(s: string) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
 export default function SeverityBadge({ severity }: Props) {
-  return <span className={CLASS_MAP[severity]}>{severity}</span>;
+  return <span className={CLASS_MAP[severity]}>{capitalize(severity)}</span>;
 }

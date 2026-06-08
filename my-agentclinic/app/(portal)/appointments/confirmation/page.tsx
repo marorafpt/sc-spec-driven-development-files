@@ -37,13 +37,14 @@ export default async function ConfirmationPage({ searchParams }: Props) {
           <div className="flex gap-2">
             <dt className="text-neutral-500 w-20 flex-shrink-0">Agent</dt>
             <dd className="font-medium text-neutral-900">
-              {agent?.name ?? "Unknown"} ({agent?.species})
+              {agent?.name ?? "Unknown"} ({agent?.species ?? "Unknown"})
             </dd>
           </div>
           <div className="flex gap-2">
             <dt className="text-neutral-500 w-20 flex-shrink-0">Therapy</dt>
             <dd className="font-medium text-neutral-900">
-              {therapy?.name ?? "Unknown"} &mdash; {therapy?.durationMinutes} min
+              {therapy?.name ?? "Unknown"} &mdash;{" "}
+              {therapy?.durationMinutes ?? "?"} min
             </dd>
           </div>
           <div className="flex gap-2">
@@ -68,7 +69,7 @@ export default async function ConfirmationPage({ searchParams }: Props) {
           href="/appointments/new"
           className="px-5 py-2.5 rounded-lg border border-neutral-300 text-neutral-700 font-semibold hover:bg-neutral-50 transition-colors"
         >
-          Book another session
+          Book a Session
         </Link>
       </div>
     </div>

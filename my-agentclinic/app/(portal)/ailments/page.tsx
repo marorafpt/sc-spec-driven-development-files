@@ -22,9 +22,9 @@ export default function AilmentsPage() {
             >
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h2 className="font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">
+                  <h3 className="font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">
                     {ailment.name}
-                  </h2>
+                  </h3>
                   <SeverityBadge severity={ailment.severity} />
                 </div>
                 <p className="text-neutral-600 text-sm">

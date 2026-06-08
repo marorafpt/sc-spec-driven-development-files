@@ -40,7 +40,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold text-neutral-900 mb-8">
           How it works
         </h2>
-        <ol className="grid gap-6 md:grid-cols-3 list-none">
+        <ol className="grid gap-6 md:grid-cols-3 list-none" role="list">
           {[
             {
               step: 1,

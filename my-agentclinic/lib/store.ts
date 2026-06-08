@@ -5,7 +5,7 @@ import { appointments as seedAppointments } from "./data";
 // a module-level array. Using global persists the store across reloads.
 declare global {
   // eslint-disable-next-line no-var
-  var __agentclinic_store: Appointment[] | undefined;
+  var __agentclinic_store: Appointment[];
 }
 
 if (!global.__agentclinic_store) {
@@ -13,9 +13,9 @@ if (!global.__agentclinic_store) {
 }
 
 export function getAppointments(): Appointment[] {
-  return global.__agentclinic_store!;
+  return global.__agentclinic_store;
 }
 
 export function addAppointment(appt: Appointment): void {
-  global.__agentclinic_store!.push(appt);
+  global.__agentclinic_store.push(appt);
 }

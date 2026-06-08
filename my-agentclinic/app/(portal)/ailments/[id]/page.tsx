@@ -23,11 +23,8 @@ export default async function AilmentDetailPage({ params }: Props) {
         ← All conditions
       </Link>
 
-      <div className="flex flex-wrap items-center gap-3 mb-4">
+      <div className="mb-4">
         <SeverityBadge severity={ailment.severity} />
-        <span className="text-neutral-400 text-sm capitalize">
-          {ailment.severity} severity
-        </span>
       </div>
 
       <h1 className="text-3xl font-bold text-neutral-900 mb-4">{ailment.name}</h1>

@@ -30,13 +30,18 @@ export default function DashboardContent({ appointments }: Props) {
 
   return (
     <div>
-      {/* Filter bar */}
-      <div className="flex flex-wrap gap-2 mb-4" role="group" aria-label="Filter by status">
+      {/* Filter bar — single-select, modelled as a radio group */}
+      <div
+        className="flex flex-wrap gap-2 mb-4"
+        role="radiogroup"
+        aria-label="Filter by status"
+      >
         {FILTERS.map(({ value, label }) => (
           <button
             key={value}
             onClick={() => setFilter(value)}
-            aria-pressed={filter === value}
+            role="radio"
+            aria-checked={filter === value}
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
               filter === value
                 ? "bg-primary-600 text-white"
