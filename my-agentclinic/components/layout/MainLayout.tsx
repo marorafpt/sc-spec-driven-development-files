@@ -3,7 +3,11 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function MainLayout({ children }: Props) {
   return (
     <>
       <Header />

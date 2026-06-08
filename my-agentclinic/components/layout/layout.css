@@ -6,7 +6,7 @@
 
 .site-header {
   background-color: var(--color-primary-600);
-  color: oklch(98% 0.005 240);
+  color: var(--color-neutral-50);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -74,7 +74,7 @@
 }
 
 .site-nav__link:hover {
-  background-color: oklch(100% 0 0 / 0.12);
+  background-color: var(--color-nav-link-hover);
 }
 
 /* ------------------------------------------------------------------ */

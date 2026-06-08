@@ -4,37 +4,40 @@
 @theme {
   --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
 
-  /* Clinic color tokens */
-  --color-primary-50: oklch(97% 0.02 240);
-  --color-primary-100: oklch(93% 0.04 240);
-  --color-primary-200: oklch(86% 0.08 240);
-  --color-primary-300: oklch(77% 0.12 240);
-  --color-primary-400: oklch(66% 0.16 240);
-  --color-primary-500: oklch(55% 0.18 240);
-  --color-primary-600: oklch(46% 0.18 240);
-  --color-primary-700: oklch(38% 0.16 240);
-  --color-primary-800: oklch(30% 0.12 240);
-  --color-primary-900: oklch(22% 0.08 240);
+  /* Clinic color tokens — brand: orange and black */
+  --color-primary-50: oklch(97% 0.015 42);
+  --color-primary-100: oklch(93% 0.04 42);
+  --color-primary-200: oklch(87% 0.09 42);
+  --color-primary-300: oklch(79% 0.14 42);
+  --color-primary-400: oklch(71% 0.18 42);
+  --color-primary-500: oklch(63% 0.21 42);
+  --color-primary-600: oklch(54% 0.20 42);
+  --color-primary-700: oklch(44% 0.17 42);
+  --color-primary-800: oklch(34% 0.12 42);
+  --color-primary-900: oklch(24% 0.07 42);
 
-  --color-accent-50: oklch(97% 0.03 60);
-  --color-accent-100: oklch(93% 0.06 60);
-  --color-accent-200: oklch(87% 0.10 60);
-  --color-accent-300: oklch(79% 0.14 60);
-  --color-accent-400: oklch(70% 0.17 60);
-  --color-accent-500: oklch(62% 0.19 60);
-  --color-accent-600: oklch(52% 0.18 60);
-  --color-accent-700: oklch(43% 0.15 60);
-  --color-accent-800: oklch(34% 0.11 60);
-  --color-accent-900: oklch(25% 0.07 60);
+  --color-accent-50: oklch(97% 0.02 65);
+  --color-accent-100: oklch(93% 0.05 65);
+  --color-accent-200: oklch(87% 0.10 65);
+  --color-accent-300: oklch(80% 0.14 65);
+  --color-accent-400: oklch(72% 0.17 65);
+  --color-accent-500: oklch(64% 0.19 65);
+  --color-accent-600: oklch(54% 0.18 65);
+  --color-accent-700: oklch(44% 0.15 65);
+  --color-accent-800: oklch(34% 0.11 65);
+  --color-accent-900: oklch(24% 0.07 65);
 
-  --color-neutral-50: oklch(98% 0.005 240);
-  --color-neutral-100: oklch(95% 0.008 240);
-  --color-neutral-200: oklch(90% 0.01 240);
-  --color-neutral-300: oklch(82% 0.012 240);
-  --color-neutral-400: oklch(70% 0.014 240);
-  --color-neutral-500: oklch(58% 0.014 240);
-  --color-neutral-600: oklch(46% 0.012 240);
-  --color-neutral-700: oklch(36% 0.01 240);
-  --color-neutral-800: oklch(26% 0.008 240);
-  --color-neutral-900: oklch(16% 0.005 240);
+  --color-neutral-50: oklch(98% 0.003 42);
+  --color-neutral-100: oklch(95% 0.005 42);
+  --color-neutral-200: oklch(90% 0.007 42);
+  --color-neutral-300: oklch(82% 0.009 42);
+  --color-neutral-400: oklch(70% 0.009 42);
+  --color-neutral-500: oklch(55% 0.008 42);
+  --color-neutral-600: oklch(42% 0.007 42);
+  --color-neutral-700: oklch(30% 0.005 42);
+  --color-neutral-800: oklch(20% 0.004 42);
+  --color-neutral-900: oklch(12% 0.003 42);
+
+  /* Interaction tokens */
+  --color-nav-link-hover: oklch(100% 0 0 / 0.12);
 }

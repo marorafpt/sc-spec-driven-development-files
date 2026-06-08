@@ -1,7 +1,5 @@
 # Roadmap
 
-Phases are medium-grained — one feature area each, independently shippable.
-
 ---
 
 ## Phase 1 — Scaffold ✅ Complete — 2026-06-07
@@ -17,53 +15,33 @@ Phases are medium-grained — one feature area each, independently shippable.
 
 ---
 
-## Phase 2 — Marketing landing page
-*A visitor understands what AgentClinic is in 10 seconds.*
+## Phase 2 — Full application
+*Marketing site, portal features, dashboard, and production polish.*
 
-- [ ] Navigation bar with links to portal
+**Marketing landing page**
 - [ ] Hero section with tagline and CTA
 - [ ] "How it works" section (3 steps)
 - [ ] Sample ailments teaser
 
----
-
-## Phase 3 — Ailments feature
-*An agent can browse and read about all known conditions.*
-
+**Ailments feature**
 - [ ] Ailments list page: name, severity badge, short description
 - [ ] Ailment detail page: full description, recommended therapies
 
----
-
-## Phase 4 — Therapies feature
-*An agent can explore available treatments.*
-
+**Therapies feature**
 - [ ] Therapies list page: name, duration, ailments treated
 - [ ] Therapy detail page
 
----
-
-## Phase 5 — Appointment booking
-*An agent can book a session.*
-
+**Appointment booking**
 - [ ] Booking form: select agent, therapy, date
 - [ ] Confirmation page
 - [ ] Appointments list: upcoming and past
 
----
-
-## Phase 6 — Staff dashboard
-*Mary's team has clinic-wide visibility at a glance.*
-
+**Staff dashboard**
 - [ ] Summary stats: total agents, open bookings, completed sessions
 - [ ] Appointments table with status, agent, and therapy info
 - [ ] Filter by status
 
----
-
-## Phase 7 — Polish & persistence
-*Production-ready feel.*
-
+**Polish & persistence**
 - [ ] Replace seed data with file-based JSON store or SQLite
 - [ ] Loading states and error boundaries
 - [ ] Responsive layout audit (cross-device QA pass — responsive design is built in from Phase 1, this is the formal sign-off)

@@ -54,8 +54,8 @@ Start `npm run dev` and confirm each URL returns a page (not a 404 or crash):
 - `tsconfig.json` has `"strict": true`
 
 Manual checks:
-- `tailwind.config.ts` content paths cover `app/**` and `components/**`
-- `postcss.config.js` includes `tailwindcss` and `autoprefixer`
+- `app/globals.css` `@theme` block defines clinic color tokens (`primary`, `accent`, `neutral`)
+- `postcss.config.js` includes `@tailwindcss/postcss`
 
 ## 5. Brand tokens are defined
 

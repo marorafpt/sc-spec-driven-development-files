@@ -7,7 +7,7 @@ Transform the bare `npm init` project into a runnable Next.js 15 app with correc
 ## What is in scope
 
 - Install and configure Next.js 15, React 19, Tailwind CSS, TypeScript (strict mode)
-- All required config files: `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`
+- All required config files: `tsconfig.json`, `next.config.ts`, `postcss.config.js`; Tailwind v4 is configured via the `@theme` block in `app/globals.css` — no separate `tailwind.config.ts` is needed
 - Root layout (`app/layout.tsx`) with minimal brand: one Google Font wired through Tailwind, Tailwind color tokens for the clinic palette
 - Main layout shell (`components/layout/`) with responsive Header, Main, and Footer — the header stacks vertically on mobile and switches to a horizontal row at the `md` breakpoint (768 px)
 - Global styles (`app/globals.css`) with Tailwind base/components/utilities
@@ -26,7 +26,6 @@ Transform the bare `npm init` project into a runnable Next.js 15 app with correc
 ## What is out of scope
 
 - SQLite / `lib/db.ts` — data access layer is deferred to Phase 7
-- Nav bar, footer, or any shared UI component — deferred to Phase 2
 - Any real page content, styling, or interactivity — each phase owns its own feature
 
 ## Decisions

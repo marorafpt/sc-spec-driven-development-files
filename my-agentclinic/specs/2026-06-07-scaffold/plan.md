@@ -15,7 +15,7 @@ Numbered task groups in dependency order. Complete each group before starting th
 
 - `tsconfig.json` — strict mode, paths alias `@/*` → `./`, target ES2017+
 - `next.config.ts` — minimal config (no extra plugins needed for Phase 1)
-- `tailwind.config.ts` — content paths covering `app/**` and `components/**`; extend theme with clinic color tokens (primary, accent, neutral) and chosen Google Font family
+- `app/globals.css` `@theme` block — Tailwind v4 CSS-based config; define clinic color tokens (primary, accent, neutral) and Google Font family (no `tailwind.config.ts` needed)
 - `postcss.config.js` — standard Tailwind + autoprefixer setup
 
 ## 3. Root layout and global styles

@@ -1,7 +1,8 @@
 # Changelog
-<!-- last-sync: 2600d165ec5644a69df795c4e815a9023cd4b822 -->
+<!-- last-sync: 5632dd9525dffc2096c26271d57190bb426e81bf -->
 
 ## 2026-06-07
+- Fix changelog skill to track sync by commit hash, not date
 - Add changelog skill and bootstrap CHANGELOG.md from git history
 - Add responsive design as a cross-cutting requirement
 - Add Vitest validation suite for Phase 1 scaffold
