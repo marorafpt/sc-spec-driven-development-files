@@ -4,15 +4,16 @@ Phases are medium-grained — one feature area each, independently shippable.
 
 ---
 
-## Phase 1 — Scaffold
+## Phase 1 — Scaffold ✅ Complete — 2026-06-07
 *Runnable app, correct structure, no features.*
 
-- [ ] Update `package.json`; install Next.js 15, React 19, Tailwind CSS, TypeScript
-- [ ] Add `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`
-- [ ] Create `app/layout.tsx` and `app/globals.css`
-- [ ] Define domain types in `lib/types.ts` (`Ailment`, `Therapy`, `Agent`, `Appointment`)
-- [ ] Add seed data in `lib/data.ts`
-- [ ] Stub all route pages with placeholder content
+- [x] Update `package.json`; install Next.js 15, React 19, Tailwind CSS, TypeScript
+- [x] Add `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`
+- [x] Create `app/layout.tsx` and `app/globals.css`
+- [x] Main layout shell: `Header`, `Main`, `Footer` subcomponents with dedicated `layout.css`
+- [x] Define domain types in `lib/types.ts` (`Ailment`, `Therapy`, `Agent`, `Appointment`)
+- [x] Add seed data in `lib/data.ts`
+- [x] Stub all route pages with placeholder content
 
 ---
 

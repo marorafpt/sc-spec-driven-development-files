@@ -23,7 +23,22 @@ Numbered task groups in dependency order. Complete each group before starting th
 - `app/globals.css` — Tailwind `@base`, `@components`, `@utilities` directives; import Google Font via `@import` or Next.js font module
 - `app/layout.tsx` — `<html lang="en">`, `<body>` with font class applied; metadata export (`title: "AgentClinic"`, `description` from mission)
 
-## 4. Domain types and seed data
+## 4. Main layout shell
+
+- `components/layout/layout.css` — component-scoped CSS using the custom OKLCH tokens from `globals.css`:
+  - `.site-header` — sticky primary-600 bar with brand link and nav
+  - `.site-header__inner` — max-width container, flex row, height 3.5 rem
+  - `.site-header__brand` — bold wordmark, links to `/`
+  - `.site-nav` / `.site-nav__link` — horizontal pill nav for Ailments, Therapies, Appointments, Dashboard
+  - `.site-main` — max-width container, auto margins, 2.5 rem vertical padding; `flex: 1` so it fills remaining height
+  - `.site-footer` — neutral-100 background, centered copyright line
+- `components/layout/Header.tsx` — server component; renders `<header>` with brand and nav links via `next/link`
+- `components/layout/Main.tsx` — server component; wraps `children` in `<main className="site-main">`
+- `components/layout/Footer.tsx` — server component; renders `<footer>` with year and tagline
+- `components/layout/MainLayout.tsx` — imports `layout.css`; composes Header, Main, Footer; consumed by `app/layout.tsx`
+- `app/layout.tsx` — add `flex flex-col min-h-screen` to `<body>`; import and wrap children with `<MainLayout>`
+
+## 5. Domain types and seed data
 
 - `lib/types.ts` — TypeScript interfaces:
   - `Ailment`: `id`, `name`, `severity` (`"mild" | "moderate" | "severe"`), `shortDescription`, `description`, `therapyIds`
@@ -32,7 +47,7 @@ Numbered task groups in dependency order. Complete each group before starting th
   - `Appointment`: `id`, `agentId`, `therapyId`, `date`, `status` (`"upcoming" | "completed" | "cancelled"`)
 - `lib/data.ts` — export `ailments`, `therapies`, `agents`, `appointments` arrays, 3–5 items each; use absurdist but plausible content matching mission tone
 
-## 5. Route stubs
+## 6. Route stubs
 
 Create each file with: a single server component, an `<h1>` stub heading, and a short placeholder paragraph. No imports from `lib/` needed at this stage.
 
@@ -45,7 +60,7 @@ Create each file with: a single server component, an `<h1>` stub heading, and a 
 - `app/(portal)/appointments/new/page.tsx`
 - `app/dashboard/page.tsx`
 
-## 6. Verify
+## 7. Verify
 
 - Run `npm run build` — must exit 0 with no TypeScript errors
 - Confirm zero type errors reported in the build output

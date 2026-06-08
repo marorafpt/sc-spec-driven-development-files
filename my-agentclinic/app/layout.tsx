@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import MainLayout from "@/components/layout/MainLayout";
 
 export const metadata: Metadata = {
   title: "AgentClinic",
@@ -14,8 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-neutral-50 text-neutral-900">
-        {children}
+      <body className="font-sans antialiased bg-neutral-50 text-neutral-900 flex flex-col min-h-screen">
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
