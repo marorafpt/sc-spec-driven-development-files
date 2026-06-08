@@ -1,7 +1,8 @@
 # Changelog
-<!-- last-sync: aed7024876439c53addb6c5a753c2e061a22ad91 -->
+<!-- last-sync: 01d612874ac21ad0fd8903c1f029cec27bc8e4c7 -->
 
 ## 2026-06-08
+- Apply Phase 2 review fixes: validation, a11y, spec compliance, UX polish
 - Implement Phase 2: full application — landing page, all portal features, dashboard
 - Apply review fixes and post-Phase-1 updates
 
